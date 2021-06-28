@@ -8,3 +8,11 @@ ThisIsCodeTest/.vs/ThisIsCodeTest/v16/Browse.VC.db-wal
 ThisIsCodeTest/.vs/ThisIsCodeTest/v16/Browse.VC.db-shm
 ThisIsCodeTest/.vs/ThisIsCodeTest/v16/Browse.VC.db
 ThisIsCodeTest/.vs/ThisIsCodeTest/v16/.suo
+*.pdb
+ThisIsCodeTest/Debug/vc142.pdb
+ThisIsCodeTest/Debug/vc142.idb
+ThisIsCodeTest/Debug/ThisIsCodeTest.pdb
+ThisIsCodeTest/Debug/ThisIsCodeTest.log
+ThisIsCodeTest/Debug/ThisIsCodeTest.ilk
+ThisIsCodeTest/Debug/ThisIsCodeTest.exe
+ThisIsCodeTest/Debug/Greedy.obj

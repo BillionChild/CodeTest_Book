@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <vector>
+#include <math.h>
 #include <algorithm>
 using namespace std;
 
@@ -28,7 +29,7 @@ void page92Solution()
 			count_K--;
 		}
 		else {
-			sum += arr[1];
+			sum += *(arr+1);
 			count_K = K;
 		}
 
@@ -37,8 +38,35 @@ void page92Solution()
 	cout << sum;
 }
 
+//page96
+//Greedy 숫자 카드 게임
+void page96Solution() {
+	int N, M;
+	cin >> N >> M;
+	vector<vector<int>> card(N, vector<int>(M, 0));
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+		{
+			int input = 0;
+			cin >> input;
+			card[i][j] = input;
+		}
+	}
+
+	vector<int> maxCard;
+	for (int i = 0; i < card.size(); i++)
+	{
+		int input = *min_element(card[i].begin(), card[i].end()); // min val by range of vector[i]
+		maxCard.push_back(input);
+	}
+	
+	cout << *max_element(maxCard.begin(), maxCard.end());
+
+}
 
 int main(void) {
-	page92Solution();
+	//page92Solution();
+	page96Solution();
 	return 0;
 }
