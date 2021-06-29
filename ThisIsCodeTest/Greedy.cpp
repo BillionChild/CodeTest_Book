@@ -53,7 +53,7 @@ void page96Solution() {
 			card[i][j] = input;
 		}
 	}
-	
+
 	vector<int> maxCard;
 	for (int i = 0; i < card.size(); i++)
 	{
@@ -64,29 +64,9 @@ void page96Solution() {
 	cout << *max_element(maxCard.begin(), maxCard.end());
 
 }
-void page99Solution() {
-	int N, K;
-	cin >> N >> K;
-	int count = 0;
-	while (N!=1)
-	{
-		if (N%K != 0) {
-			N--;
-		}
-		else {
-			N /= K;
-		}
-		count++;
-	}
-	cout << count;
-}
+
 int main(void) {
 	//page92Solution();
-	//page96Solution();
-	page99Solution();
+	page96Solution();
 	return 0;
 }
-
-
-
-
