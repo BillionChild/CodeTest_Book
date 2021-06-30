@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <iostream>
-#include <vector>
-#include <math.h>
-#include <algorithm>
-using namespace std;
+#include "Common.h"
 
 //page87
 //Greedy
@@ -80,13 +75,21 @@ void page99Solution() {
 	}
 	cout << count;
 }
-int main(void) {
-	//page92Solution();
-	//page96Solution();
-	page99Solution();
-	return 0;
-}
-
+//
+//
+//
+//int main(void) {
+//	//page92Solution();
+//	//page96Solution();
+//	//page99Solution();
+//
+//
+//
+//	return 0;
+//
+//
+//}
+//
 
 
 
