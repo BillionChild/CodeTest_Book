@@ -1,4 +1,5 @@
 #include "Common.h"
+#include <map>
 #include <sstream>
 //Implementation
 //Tip (cin ฐüทร)
@@ -14,10 +15,35 @@ void page110Solution() {
 	string plans;
 	cin.ignore();
 	getline(cin, plans);
-	istringstream ss(plans);
-	string Buffer;
-	getline(ss, Buffer, ' ');
-	int a = 0;
+	pair<int, int> loc(1, 1);
+	for (int i = 0; i < plans.size(); i++)
+	{
+		char input;
+		input = plans[i];
+		switch (input)
+		{
+		case 'R':
+			if (loc.first < range)
+				loc.first++;
+			break;
+		case 'L':
+			if (loc.first > 1)
+				loc.first--;
+			break;
+		case 'U':
+			if (loc.second > 1)
+				loc.second--;
+			break;
+
+		case 'D':
+			if (loc.second < range)
+				loc.second++;
+			break;
+		default:
+			break;
+		}
+	}
+	cout << loc.second << " " << loc.first;
 }
 
 int main(void) {
