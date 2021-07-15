@@ -16,3 +16,6 @@ ThisIsCodeTest/Debug/ThisIsCodeTest.log
 ThisIsCodeTest/Debug/ThisIsCodeTest.ilk
 ThisIsCodeTest/Debug/ThisIsCodeTest.exe
 ThisIsCodeTest/Debug/Greedy.obj
+*.pdb
+*.obj
+ThisIsCodeTest/Debug/Implementation.obj

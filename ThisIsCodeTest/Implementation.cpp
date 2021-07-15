@@ -46,8 +46,63 @@ void page110Solution() {
 	cout << loc.second << " " << loc.first;
 }
 
+void page112Solution() {
+	int N;
+	cin >> N;
+	int count = 0;
+	for (int i = 0; i <= N; i++)
+	{
+		for (int j = 0; j < 60; j++)
+		{
+			for (int k= 0; k < 60; k++)
+			{
+				// 하나만 3이 포함되도 되므로
+				if (k / 10 == 3 || k % 10 == 3)
+				{
+					count++;
+				}
+				else if (j / 10 == 3 || j % 10 == 3)
+				{
+					count++;
+				}
+				else if (i % 10 == 3) {
+					count++;
+				}
+			}
+		
+		}
+	
+	}
+	cout << count;
+}
+void page112Solution2() {
+	//문자열을 통한 해법
+	int N = 0;
+	cin >> N;
+	string input;
+	int count = 0;
+	for (int i = 0; i <=N; i++)
+	{
+		for (int j = 0; j < 60; j++)
+		{
+			for (int k = 0; k < 60; k++)
+			{
+				input = to_string(i) + to_string(j) + to_string(k);
+				if (input.find("3")!=string::npos) 
+				{
+					count++;
+				}
+			}
+		}
+	}
+	cout << count;
+
+}
+
 int main(void) {
-	page110Solution();
+	//page110Solution();
+	//page112Solution();
+	//page112Solution2();
 	return 0;
 }
 
