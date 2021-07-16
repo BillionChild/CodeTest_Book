@@ -95,14 +95,40 @@ void page112Solution2() {
 			}
 		}
 	}
-	cout << count;
 
+	cout << count;
+}
+
+
+void page115Solution() {
+	
+	int count = 0;
+
+	string input;
+	cin >> input;
+	//문자열로 받고 영문 가로 좌표 변환
+	pair<int, int> loc = make_pair(0, 0);
+	loc.first = input[0] - 'a' + 1; // char를 int로 변환 (묵시적으로 int캐스팅 )
+	loc.second = input[1] - '0' ;
+	// {x, y} Knight가 움직일수 있는 벡터거리 경우의 수 
+	vector<pair<int, int>> moveCase = { {2,1},{2,-1},{-2,1},{-2,-1},{1,2},{1,-2},{-1,2},{-1,-2} };
+	for (int i = 0; i < moveCase.size(); i++)
+	{
+		pair<int, int> vecPos = loc;
+		vecPos.first += moveCase[i].first;
+		vecPos.second += moveCase[i].second;
+		// 최종 움직인 위치가 체스판 위에 있으면 O
+		if (vecPos.first > 0 && vecPos.second > 0)
+			count++;
+	}
+	cout << count;
 }
 
 int main(void) {
 	//page110Solution();
 	//page112Solution();
 	//page112Solution2();
+	page115Solution();
 	return 0;
 }
 
