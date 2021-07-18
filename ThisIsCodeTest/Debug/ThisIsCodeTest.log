@@ -1,4 +1,6 @@
 ﻿  Implementation.cpp
-E:\Coding\CodeTest_Book\ThisIsCodeTest\Implementation.cpp(19,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-E:\Coding\CodeTest_Book\ThisIsCodeTest\Implementation.cpp(115,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+E:\Coding\CodeTest_Book\ThisIsCodeTest\Implementation.cpp(20,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+E:\Coding\CodeTest_Book\ThisIsCodeTest\Implementation.cpp(116,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+E:\Coding\CodeTest_Book\ThisIsCodeTest\Implementation.cpp(154,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+E:\Coding\CodeTest_Book\ThisIsCodeTest\Implementation.cpp(156,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   ThisIsCodeTest.vcxproj -> E:\Coding\CodeTest_Book\ThisIsCodeTest\Debug\ThisIsCodeTest.exe

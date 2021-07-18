@@ -1,6 +1,7 @@
 #include "Common.h"
 #include <map>
 #include <sstream>
+#include <queue>
 //Implementation
 //Tip (cin 관련)
 //우선 cin 을 통해 문자를 입력받을 경우 바로 변수에 값이 저장되는 게 아닌
@@ -124,11 +125,116 @@ void page115Solution() {
 	cout << count;
 }
 
+#define MIN 3
+#define MAX 50
+
+// Level : ★★
+struct CharacterState {
+	int col = 0; //열
+	int row = 0; //행
+	int direction = 0; // 방향
+	CharacterState() {
+
+	}
+	CharacterState(int colA,int rowB,int dir) {
+		col = colA;
+		row = rowB;
+		direction = dir;
+	}
+};
+typedef CharacterState cs;
+void page118Solution() {
+	// input~
+	int N, M;
+	cin >> N >> M;
+	int col, row, dir;
+	cin >> row >> col >> dir;
+	cs man(col, row, dir); // 캐릭터 상태 생성
+	vector<vector<int>> matrix(N, vector<int>(M, 0)); //init 
+	for (int i = 0; i < matrix.size(); i++)
+	{
+		for (int j = 0; j < matrix[i].size(); j++)
+		{
+			cin >> matrix[i][j];
+		}
+	}
+	//~input
+	// 플레이어 회전 방향 순서 ( 0 : North , 1 : East, 2 : South ,3 : West )
+	queue<int> dirCycle;
+	int currdir = man.direction; // 초기 값 저장
+	matrix[man.row][man.col] = -1; // -1이 방문했다는 기록,
+	//queue에 회전 순서 삽입
+	for (int i = 0; i < 4; i++)
+	{
+		if (currdir % 4 < 0) {
+			currdir = 3;
+			dirCycle.push(currdir);
+		}
+		else {
+			dirCycle.push(currdir);
+		}
+		currdir--;
+	}
+	int a = 0;
+	int dx[4] = {0,1,0,-1}; // 입력조건 index 0 : 북쪽, 1:동쪽, 2:남쪽, 3 : 서쪽
+	int dy[4] = {1,0,-1,0};
+	int visited_count= 1; // visited
+	int check_around = 0;
+	//알고리즘 구현
+	while (true)
+	{
+		
+		int current_dir = dirCycle.front(); // 큐에있는 현재 방향을 추출
+		dirCycle.pop();
+		//step 1. 플레이어의 바로 왼쪽 방향에 가보지 않은 칸이 있을경우 왼쪽으로 회전한 다음 왼쪽으로 한칸 전진
+		//지도 영역 내인지 조건 체크
+		int row = man.row + dy[dirCycle.front()];
+		int col = man.col + dx[dirCycle.front()];
+		//지도 범위내 인지 체크
+		if ((row >= 0 && row < N) && (col >= 0 && col < M)) {
+			int checkNext = matrix[row][col];
+			if (checkNext == 0) {
+				matrix[row][col] = -1; // 방문처리 후 새로 플레이어 위치 갱신
+				man.row = row;
+				man.col = col;
+				man.direction = dirCycle.front();
+				visited_count++;
+				check_around = 0;
+			}
+			//1이거나 -1 인경우 플레이어 방향만 전환
+			else {
+				man.direction = dirCycle.front();
+				check_around++;
+			}
+		}
+		//그냥 맵영역을 벗어났을때
+		else {
+			man.direction = dirCycle.front();
+			check_around++;
+		}
+
+
+		if (check_around >= 4) {//후퇴 해야함
+			int beforePos_row = man.row - dy[man.direction];
+			int beforePos_col = man.col - dx[man.direction];
+			man.row = beforePos_row;
+			man.col = beforePos_col;
+			if (matrix[man.row][man.col] == 1)
+				break;
+		}
+		
+		dirCycle.push(current_dir);
+	}
+	cout << visited_count;
+	//t dx[4] = {}
+		//int a = 0;
+}
 int main(void) {
 	//page110Solution();
 	//page112Solution();
 	//page112Solution2();
-	page115Solution();
+	//page115Solution();
+	page118Solution();
 	return 0;
 }
 

@@ -56,6 +56,8 @@ void page96Solution() {
 		maxCard.push_back(input);
 	}
 	
+
+
 	cout << *max_element(maxCard.begin(), maxCard.end());
 
 }
