@@ -229,12 +229,12 @@ void page118Solution() {
 	//t dx[4] = {}
 		//int a = 0;
 }
-int main(void) {
-	//page110Solution();
-	//page112Solution();
-	//page112Solution2();
-	//page115Solution();
-	page118Solution();
-	return 0;
-}
-
+//int main(void) {
+//	//page110Solution();
+//	//page112Solution();
+//	//page112Solution2();
+//	//page115Solution();
+//	page118Solution();
+//	return 0;
+//}
+//
