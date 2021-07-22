@@ -1,5 +1,7 @@
 #include "Common.h"
 
+
+
 bool page149DFS(int row,int col,int N,int M, vector<vector<bool>>& check)
 {
 	//범위 안인지 밖인지 체크
@@ -51,8 +53,55 @@ void page149Solution() {
 }
 
 
-int main(void) {
-	page149Solution();
-	return 0;
+
+void page152Solution() {
+	//BFS
+	int N, M;
+	cin >> N >> M;
+	vector<vector<int>> maze(N,vector<int>(M,0));
+	string input;
+
+	// 시작 값 입력
+	for (int i = 0; i < maze.size(); i++)
+	{
+		string input;
+		cin >> input;
+		for (int j= 0; j < maze[i].size(); j++)
+		{	
+			maze[i][j] =(int)(input[j] - '0');
+		}
+	}
+	//BFS에 활용할 큐 구현
+	queue<pair<int,int>> q;
+	q.push(make_pair(0, 0));
+	int count = 1;
+	while (!q.empty())
+	{
+		int row = q.front().first;
+		int col = q.front().second;
+		if (row+1< N) {
+			if(maze[row + 1][col] == 1){
+				q.push(make_pair(row + 1, col));
+				maze[row + 1][col] = row+1+col+1;
+			}
+		}
+		if (col+1<M) {
+			if(maze[row][col + 1] == 1){
+				q.push(make_pair(row, col+1));
+				maze[row][col+1] = row + col+1 + 1;
+			}
+		}
+		q.pop();
+	}
+	cout << maze[N - 1][M - 1];
+
+
+
 }
+
+//int main(void) {
+//	//page149Solution();
+//	//page152Solution();
+//	return 0;
+//}
 
