@@ -43,6 +43,7 @@ void page110Solution() {
 		default:
 			break;
 		}
+		
 	}
 	cout << loc.second << " " << loc.first;
 }

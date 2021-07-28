@@ -1,8 +1,5 @@
-﻿  DFSBFS.cpp
-E:\Coding\CodeTest_Book\ThisIsCodeTest\DFSBFS.cpp(63,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-E:\Coding\CodeTest_Book\ThisIsCodeTest\DFSBFS.cpp(66,19): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-E:\Coding\CodeTest_Book\ThisIsCodeTest\DFSBFS.cpp(73,19): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-E:\Coding\CodeTest_Book\ThisIsCodeTest\DFSBFS.cpp(75,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-E:\Coding\CodeTest_Book\ThisIsCodeTest\DFSBFS.cpp(94,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-E:\Coding\CodeTest_Book\ThisIsCodeTest\DFSBFS.cpp(98,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+﻿  Sort.cpp
+E:\Coding\CodeTest_Book\ThisIsCodeTest\Sort.cpp(53,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+E:\Coding\CodeTest_Book\ThisIsCodeTest\Sort.cpp(67,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+E:\Coding\CodeTest_Book\ThisIsCodeTest\Sort.cpp(74,6): warning C4101: 'test' :참조되지 않은 지역 변수입니다.
   ThisIsCodeTest.vcxproj -> E:\Coding\CodeTest_Book\ThisIsCodeTest\Debug\ThisIsCodeTest.exe
